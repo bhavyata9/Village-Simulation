@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=side\ rotation\ num
+comment0.target=Dock(java.lang.String,\ int,\ int)
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ spawnBoats()
+numComments=3

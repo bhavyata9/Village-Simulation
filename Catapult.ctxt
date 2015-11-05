@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Catapult()
+comment1.params=side\ rotation
+comment1.target=Catapult(java.lang.String,\ int)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Catapult\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.params=
+comment3.target=void\ fire()
+comment3.text=\r\n\ Fires\ the\ boulder\r\n
+comment4.params=
+comment4.target=void\ animateAttack()
+comment5.params=
+comment5.target=void\ findTarget()
+numComments=6

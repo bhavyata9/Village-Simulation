@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Projectiles()
+comment1.params=side\ picID\ rotation
+comment1.target=Projectiles(java.lang.String,\ java.lang.String,\ int)
+comment1.text=\r\n\ Create\ new\ thing\ initialised\ with\ given\ speed.\r\n
+comment2.params=
+comment2.target=void\ fly()
+comment3.params=iden\ pic
+comment3.target=void\ setImg(java.lang.String,\ java.lang.String)
+comment4.params=
+comment4.target=void\ lifeRemaining()
+numComments=5

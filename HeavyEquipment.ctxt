@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ fire()
+comment1.params=damage
+comment1.target=void\ hitMe(int)
+comment2.params=iden\ pic
+comment2.target=void\ setImg(java.lang.String,\ java.lang.String)
+numComments=3

@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=instr\ inTextColour\ c
+comment0.target=InputBoxes(java.lang.String,\ int,\ java.awt.Color)
+comment0.text=\r\n\ Creates\ a\ text\ box\r\n\ @param\ instr\ \ \ \ \ \ \ \ \ \ \ -\ \ The\ text\ in\ the\ textbox\r\n\ @param\ inTextColour\ \ \ \ -\ \ Combined\ RGB\ value\ for\ the\ text\ colour(colour\ of\ the\ String)\r\n\ @param\ c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\ \ java.awt\ Color\ for\ background\r\n
+comment1.params=t
+comment1.target=void\ update(java.lang.String)
+comment1.text=\r\n\ Updates\ text.\ It\ will\ be\ black\ on\ a\ white\ background,\ which\ a\ font\ size\ of\ 25.\ It\ has\ a\ fixed\ length\ of\ 200.\r\n\r\n\ @param\ \ t\ the\ new\ string\r\n
+comment2.params=
+comment2.target=int\ greaterHeight()
+comment2.text=\r\n\ Calculates\ the\ greatest\ height\ among\ the\ images,\ namely\ the\ text\ images\ and\ the\ bar\ image.\ The\ highest\ one\ will\ be\ used\ in\ calculating\r\n\ the\ height\ of\ the\ overall\ image\ (also\ known\ as\ in\ this\ program\ as\ "myImage").\ \ \r\n\ @return\ int\ \ The\ largest\ height\ among\ the\ images\r\n
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\r\n\ Update\ the\ textField\r\n
+comment4.params=
+comment4.target=java.lang.String\ getText()
+comment4.text=\r\n\ @return\ String\ currently\ displayed\ string\r\n
+comment5.params=
+comment5.target=int\ getBlinkSpeed()
+comment5.text=\r\n\ @return\ int\ speed\ of\ blinking\ cursor\r\n
+numComments=6

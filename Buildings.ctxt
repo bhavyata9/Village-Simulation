@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=damage
+comment0.target=void\ hitMe(int)
+comment1.params=
+comment1.target=void\ updateImage()
+comment2.params=iden\ pic
+comment2.target=void\ setImg(java.lang.String,\ java.lang.String)
+comment3.params=picNum
+comment3.target=void\ setImg(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ getId()
+comment5.params=type\ id\ num
+comment5.target=void\ spawn(java.lang.String,\ java.lang.String,\ int)
+numComments=6

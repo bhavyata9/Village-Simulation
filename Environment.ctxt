@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=t
+comment0.target=void\ getSizeRotationID(int)
+comment1.params=dimension\ scaleFactor
+comment1.target=int\ roundDim(int,\ int)
+comment2.params=
+comment2.target=boolean\ checkFinder()
+comment3.params=
+comment3.target=void\ setFinder()
+numComments=4

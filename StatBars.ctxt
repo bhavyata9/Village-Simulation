@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=side\ villageName1\ heightY\ widthX\ purpose\ initHP\ danger\ maximum\ HBheight
+comment0.target=StatBars(java.lang.String,\ java.lang.String,\ int,\ int,\ java.lang.String,\ int,\ int,\ int,\ int)
+comment0.text=\r\nCreates\ a\ bar\ object\ that\ will\ not\ follow\ the\ target\ actor\ and\ will\ display\ an\ emoticon\ that\ \r\nwill\ change\ depending\ on\ the\ zone\ displayed.\ The\ colours\ of\ the\ zones\ and\ the\ text\ are\ fixed.\r\nThe\ user\ has\ the\ option\ of\ inputting\:\ the\ height\ of\ the\ bar,\ the\ initial\ bar\ value,\ the\ bar\ value\ \r\nthat\ marks\ the\ end\ of\ the\ "safe\ zone",\ and\ the\ maximum\ bar\ value.\ \r\n@param\ id\ \ \ \ \ \ \ \ \ \ The\ team\ of\ the\ simulation,\ red\ or\ blue.\r\n@param\ villageA\ \ \ \ Name\ of\ the\ user,\ player\ or\ game\ character\ using\ the\ bar.\r\n@param\ heightY\ \ \ \ \ The\ height\ of\ the\ bar\ (preferably\ between\ 10-20)\r\n@param\ widthX\ \ \ \ \ \ The\ width\ of\ the\ bar(set\ in\ World\ Class-Map)\r\n@param\ purpose\ \ \ \ \ Used\ for\ the\ healthBar,\ tells\ users\ the\ reason\ of\ the\ healthBar.\r\n@param\ initHP\ \ \ \ \ \ The\ initial\ amount\ of\ health\ of\ the\ village\r\n@param\ danger\ \ \ \ \ \ The\ dangerzone\ of\ health\ for\ the\ village\r\n@param\ maximum\ \ \ \ \ The\ maximum\ amount\ of\ health\ for\ the\ village\r\n@param\ HBHeight\ \ \ \ Used\ for\ the\ healthBar,\ fixes\ the\ height\ of\ the\ bar\r\n
+comment1.params=
+comment1.target=void\ updateA()
+comment1.text=\r\n\ Ideally,\ sets\ the\ image\ for\ the\ object\ instantiated\ from\ the\ constructor.\ \r\n\ The\ difference\ will\ be\ in\ the\ emoticon\ image,\ which\ is\ something\ that\ the\ second\ constructor\ does\ not\ have.\ The\ image\ contains\ a\ bar\ that\ responds\r\n\ to\ a\ decrease\ or\ increase\ in\ bar\ value\ and\ two\ pieces\ of\ text\ (the\ name\ of\ the\ village\ and\ the\ purpose\ of\ the\ bar).The\ background\ \r\n\ of\ the\ bar\ is\ magenta\ and\ the\ outline\ is\ black.\ \r\n
+comment2.params=
+comment2.target=void\ createBar()
+comment2.text=\r\n\ Creates\ healthBar\ object\ and\ adds\ it\ to\ world\ at\ the\ same\ time\ as\ this\ object,\r\n\ the\ StatBar,\ is\ added\ to\ the\ world.\r\n
+comment3.params=
+comment3.target=int\ greaterHeight()
+comment3.text=\r\n\ Calculates\ the\ greatest\ height\ among\ the\ images,\ namely\ the\ text\ images\ and\ the\ bar\ image.\ The\ highest\ one\ will\ be\ used\ in\ calculating\r\n\ the\ height\ of\ the\ overall\ image\ (also\ known\ as\ in\ this\ program\ as\ "myImage").\ \ \r\n\ @return\ int\ \ The\ largest\ height\ among\ the\ images\ (excluding\ the\ emoticon).\r\n
+comment4.params=
+comment4.target=void\ act()
+comment4.text=\r\n\ Every\ act,\ the\ StatBar\ attempts\ to\ search\ for\ hq.\ It\ updates\ itself\ every\ act\ \r\n\ using\ the\ statistics\ from\ the\ correct\ hq.\ It\ also\ spawns\ the\ healthBar\ (but\ only\ once)\r\n
+comment5.params=
+comment5.target=void\ remove()
+comment5.text=\r\n\ Remove\ the\ healthBar\ object,\ called\ by\ MapWorld\r\n
+comment6.params=
+comment6.target=void\ findSideHQ()
+comment6.text=\r\n\ Attempts\ to\ find\ the\ correct\ side\ (based\ on\ the\ headquarters),\ so\ that\ statistics\ for\ the\r\n\ correct\ village\ can\ be\ displayed.\r\n
+comment7.params=
+comment7.target=int\ sumWidth()
+comment7.text=\r\n\ Calculates\ the\ sum\ of\ the\ width\ of\ all\ the\ images,\ namely\ the\ text\ images\ and\ the\ bar\ image.\ Used\ in\ calculating\r\n\ the\ width\ of\ the\ overall\ image\ (also\ known\ as\ in\ this\ program\ as\ "myImage").\ \ \r\n\ @return\ int\ \ The\ sum\ of\ the\ width\ of\ the\ images.\r\n
+numComments=8

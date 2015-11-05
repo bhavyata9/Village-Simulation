@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=
+comment0.target=TitleWorld()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ TitleWorld.\r\n\ Adds\ the\ button,\ which\ will\ carry\ the\ user\ to\ the\ next\ screen.\r\n\ Adds\ the\ textfields,\ which\ allow\ the\ user\ to\ input\ certain\ values.\r\n
+comment1.params=
+comment1.target=void\ started()
+comment1.text=\r\n\ Starts\ music\ playback.\r\n
+comment2.params=
+comment2.target=void\ stopped()
+comment2.text=\r\n\ Stops\ music\ playback.\r\n
+comment3.params=
+comment3.target=InputBoxes\ getI()
+comment3.text=\r\n\ Returns\ textbox\ object\r\n@return\ \ \ InputBoxes\ \ The\ first\ textbox\ from\ the\ top\ of\ the\ screen.\r\n
+comment4.params=
+comment4.target=InputBoxes\ getB()
+comment4.text=\r\n\ Returns\ textbox\ object\r\n@return\ \ \ InputBoxes\ \ The\ second\ textbox\ from\ the\ top\ of\ the\ screen.\r\n
+comment5.params=
+comment5.target=InputBoxes\ getNameR()
+comment5.text=\r\n\ Returns\ textbox\ object\r\n@return\ \ \ InputBoxes\ \ The\ first\ textbox\ from\ the\ top\ of\ the\ screen,\ in\ the\ second\ column.\r\n
+comment6.params=
+comment6.target=InputBoxes\ getNameB()
+comment6.text=\r\n\ Returns\ textbox\ object\r\n@return\ \ \ InputBoxes\ \ The\ second\ textbox\ from\ the\ top\ of\ the\ screen,\ in\ the\ second\ column.\r\n
+comment7.params=
+comment7.target=Button\ getButton()
+comment7.text=\r\n\ Returns\ button\ object\r\n@return\ \ \ Button\ \ The\ second\ textbox\ from\ the\ top\ of\ the\ screen.\r\n
+numComments=8

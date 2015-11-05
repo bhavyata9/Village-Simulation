@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.params=side\ rotation
+comment0.target=Arrow(java.lang.String,\ int)
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Damages\ People.\r\n
+comment2.params=
+comment2.target=void\ fly()
+comment2.text=\r\n\ Sets\ movement\ direction,\ speed,\ and\ image.\r\n
+comment3.params=
+comment3.target=void\ checkHitPeople()
+comment3.text=\r\n\ Checks\ if\ it\ hits\ any\ people\ from\ the\ opposite\ side\ or\ other\ objects.\r\n\ If\ so,\ removes\ itself\ from\ the\ world.\ \r\n
+comment4.params=
+comment4.target=void\ checkHitBuildings()
+comment5.params=
+comment5.target=void\ checkHitHeavyEquipment()
+comment6.params=
+comment6.target=void\ checkHitTree()
+comment7.params=
+comment7.target=void\ checkHitRock()
+numComments=8

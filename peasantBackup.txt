@@ -1,0 +1,322 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.ArrayList;
+/**
+ * Write a description of class Peasants here.
+ * 
+ * @author EJIANG and Justin Ding
+ * @version 22/03/2015
+ */
+public class Peasant extends People
+{
+    private boolean onTask = false;
+    private int numOfHouses;
+    private String buildID; // Type of Building being built
+
+    // Inventory
+    private int woodCount = 2;
+    private int coalCount = 0;
+    private int goldCount = 0; 
+
+    private int[] randomX = new int[2];
+    private int[] randomY = new int[2];
+    private int buildX;
+    private int buildY;
+    private boolean placeFound = false;
+
+    private int randomNum;
+    private int randomPosition;
+
+    private Resources r; // Target Resource
+    private int targetX;
+    private int targetY;
+    //private boolean isCollecting = false; // If Peasant is collecting the Resource at
+
+    private int headquartersX;
+    private int headquartersY;
+    private int levelOfHQ;
+
+    private int actCount = 0;
+
+    // Cleaning
+    private int cleaningActCount;
+    private boolean finishedClear = true;
+    private int clearedCount = 0;
+    private boolean needClear = false;
+    private int numOfClear = 0;
+
+    private ArrayList<Resources> resources;
+    private ArrayList<Headquarters> targetMain;
+    private ArrayList<Environment> cleanUp;
+    private ArrayList<Buildings> used;
+
+    public Peasant()
+    {
+        speed = 1;
+    }
+
+    public Peasant(String side)
+    {
+        super();
+        this.id = side;
+        this.health = 3;
+        this. speed = 1;
+        setImg(id,"P");
+    }
+
+    // Move towards building location.
+    private void moveToBuild()
+    {
+        this.turnTowards(buildX,buildY);
+        this.move(speed);
+    }
+
+    // Find your headquarters.
+    private  void findSideHQ()
+    {
+        targetMain = (ArrayList)getWorld().getObjects(Headquarters.class);
+        for(Headquarters i: targetMain)
+        {
+            if(i.id == this.id)
+            {
+                headquartersX = i.getX();
+                headquartersY = i.getY();
+            }
+            else
+            {
+                move(1);
+            }
+        }
+    }
+
+    // Finding Resources.
+    private void findResources()
+    {
+        // Find the nearest resource
+        r = (Resources)getNearestResource(500);
+
+        targetX = r.getX();
+        targetY = r.getY();
+
+        turnTowards(targetX, targetY);
+
+        // When you reach it, identify resource type and increase inventory accordingly
+        if(getX() == targetX && getY() == targetY)
+        {
+            //isCollecting = true;
+            updateInventory();
+        }
+        //         else randomlyMove();
+    }
+
+    // For collecting
+    private void updateInventory()
+    {
+        if(getIntersectingObjects(Resources.class).size() > 0)//isCollecting = true && isTouching(Resources.class) == true)
+        {
+            //if(r.cannotCollect() == false) // If you can collect the Resource
+            //{
+            if(r.getName() == "c") coalCount++; //+= r.collectMe();
+            if(r.getName() == "w") woodCount++; //+= r.collectMe();
+            if(r.getName() == "g") goldCount++; //+= r.collectMe();
+            //}
+            //isCollecting = false;
+        }
+    }
+
+    // Directly update
+    private void updateInventory(int w, int g, int c)
+    {
+        woodCount += w;
+        goldCount += g;
+        coalCount += c;
+    }
+
+    private void findPlaceToBuild()
+    {
+        randomX[0] = randomNum(100)+headquartersX+27;
+        randomX[1] = randomNum(100)+headquartersX-127;
+        randomY[0] = randomNum(100)+headquartersY+26;
+        randomY[1] = randomNum(100)+headquartersY-115;
+
+        randomPosition = randomNum(4);
+        if(randomPosition == 0)
+        {
+            buildX = randomX[0];
+            buildY = randomY[0];
+        }
+        else if(randomPosition == 1)
+        {
+            buildX = randomX[0];
+            buildY = randomY[1];
+        }
+        else if(randomPosition == 2)
+        {
+            buildX = randomX[1];
+            buildY = randomY[0];
+        }
+        else if(randomPosition == 3)
+        {
+            buildX = randomX[1];
+            buildY = randomY[1];
+        }
+    }
+
+    // Returns Building type to be built.
+    private void setBuildID(String type)
+    {
+        buildID = type;
+    }
+
+    // Build Houses or Barracks, after a 50 act interval.
+    private void build(String type)
+    {
+        //onTask = true;
+        stop();
+        actCount++;
+        if(actCount == 50)
+        {
+            if(type == "b") // Build Barracks
+            {
+                Barracks k = new Barracks(this.id);
+                getWorld().addObject(k, this.getX(), this.getY());
+                updateInventory(-2, -1, -3);
+            }
+            else if(type == "h") // Build House
+            {
+                House a = new House(this.id);
+                getWorld().addObject(a, this.getX(), this.getY());
+                numOfHouses++;
+                updateInventory(-2, 0, 0);
+            }
+            move(speed); 
+            //onTask = false;
+            actCount = 0;
+        }
+        findResources();
+    }
+    // Removes trees, and replaces them with Wood. Walk away after that. 
+    private void chopDown()
+    {
+        Tree t = (Tree)getOneIntersectingObject(Tree.class);
+        if(t != null)
+        {
+            Wood w = new Wood();
+            getWorld().addObject(w, t.getX(), t.getY());
+            getWorld().removeObject(t);
+        }
+        //randomlyMove();
+    }
+
+    private void checkSpace()
+    {
+        cleanUp = (ArrayList)getObjectsInRange(50,Environment.class);
+        used = (ArrayList)getObjectsInRange(40, Buildings.class);
+    }
+
+    // Clears area for building.
+    private void cleanUp()
+    {
+        //cleanUp = (ArrayList)getObjectsInRange(50,Environment.class);
+        Environment i = cleanUp.get(numOfClear);
+        this.turnTowards(i.getX(),i.getY());
+        move(speed);
+
+        if(this.getX() == i.getX() && this.getY() == i.getY())
+        {
+            cleaningActCount++;
+            if(cleaningActCount == 50)
+            {
+                chopDown();
+                //                 if(isTouching(Resources.class) == true)
+                //                 {
+                //                     isCollecting = true;
+                //                     updateInventory();
+                //                     if(r.cannotCollect() == true) getWorld().removeObject(r);
+                //                 }
+                //                 else getWorld().removeObject(i);
+
+                getWorld().removeObject(i);
+                clearedCount++;
+                numOfClear++;
+                cleaningActCount = 0;
+            }
+        }
+        if(clearedCount == cleanUp.size())
+        {
+            cleanUp.clear();
+            clearedCount = 0;
+            numOfClear = 0;
+            finishedClear = true;
+            needClear = false;
+        }
+    }
+
+    private int randomNum(int max)
+    {
+        randomNum = Greenfoot.getRandomNumber(max);
+        return randomNum;
+    }
+
+    public void act() 
+    {
+        // Conditions to build barracks
+        if(woodCount >= 2 && coalCount >= 3 && goldCount >= 1 && numOfHouses >= 3 && onTask == false)
+        {
+            findSideHQ();
+            findPlaceToBuild();
+            placeFound = true;
+
+            setBuildID("b");
+            findResources();
+            onTask = true;
+        }
+        // Conditions to build House
+        else if(woodCount >= 2 && onTask == false)
+        {
+            findSideHQ();
+            findPlaceToBuild();
+            placeFound = true;
+
+            setBuildID("h");
+            findResources();
+            onTask = true;
+        }
+        // Wander around and look for Resources
+        else
+        {
+            findResources();
+        }
+
+        if(placeFound == true && finishedClear == true)
+        {
+            moveToBuild();
+        }
+
+        if(this.getX() == buildX && this.getY() == buildY && finishedClear == true)
+        {
+            //cleanUp();
+            checkSpace();
+            if(cleanUp.isEmpty() == true)
+            {
+                if(used.isEmpty() == true)
+                {
+                    build(buildID);
+                    //placeFound = false;
+                }
+                else 
+                {
+                    onTask = false;
+                }
+            }
+            else
+            {
+                needClear = true;
+                finishedClear = false;
+            }
+        }
+        if(needClear == true)
+        {
+            cleanUp();
+        }
+    }
+}

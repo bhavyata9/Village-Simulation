@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=side\ rotation
+comment0.target=Boulder(java.lang.String,\ int)
+comment0.text=\r\n\ Creates\ a\ new\ Boulder\ with\ default\ speed\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Damages\ Buildings.\r\n
+comment2.params=
+comment2.target=void\ fly()
+comment2.text=\r\n\ Moves\ in\ the\ direction\ of\ hSpeed\ \r\n
+comment3.params=
+comment3.target=void\ checkHitBuildings()
+comment3.text=\r\n\ Checks\ if\ it\ hits\ any\ other\ objects\ other\ than\ people.\r\n\ If\ yes,\ then\ removes\ itself\ from\ the\ world.\ \r\n
+comment4.params=
+comment4.target=void\ checkHitRock()
+comment5.params=
+comment5.target=void\ checkHitTree()
+comment6.params=
+comment6.target=void\ checkHitHeavyEquipment()
+comment7.params=
+comment7.target=void\ checkHitPeople()
+comment8.params=
+comment8.target=void\ checkSpeed()
+numComments=9
